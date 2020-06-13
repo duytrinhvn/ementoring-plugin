@@ -1,0 +1,17 @@
+{
+    "name": "doublemint/ementoring-plugin",
+    "description": "a chat real-time chat plugin that connects students and mentors",
+    "type": "project",
+    "license": "gpl",
+    "authors": [
+        {
+            "name": "duy.trinh",
+            "email": "khac-duy.trinh@mohawkcollege.ca"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {"Inc\\": "./inc"}
+    }
+}
