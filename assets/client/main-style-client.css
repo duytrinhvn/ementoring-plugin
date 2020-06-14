@@ -1,0 +1,50 @@
+.emp-nav{
+    height: 3.5em;
+    width: 100%;
+    border: 1px solid lightgray;
+    background: rgb(148, 211, 87);
+}
+
+.emp-nav h4{
+    text-align: center;
+    color: rgb(83, 86, 90);
+}
+
+#login-container{
+    height: 30em;
+    width: 100%;
+    border: 1px solid lightgray;
+    display: flex;
+    justify-content: center;
+}
+
+#login-form{
+    align-self: center;
+    justify-content: center;
+    width: 60%;
+}
+
+#login-button{
+   border-radius: 0px;
+   width: 100%;
+   background: rgb(148, 211, 87);
+   margin-top: 1em;
+}
+
+label{
+    font-weight: bold;
+}
+
+.login-labels{
+    margin-bottom: 1px;
+}
+
+input[type="text"]{
+    margin-bottom: 3em;
+}
+
+#forget-password-link{
+    text-align: right;
+    display: block;
+    color: rgb(148, 211, 87);
+}

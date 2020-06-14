@@ -5,7 +5,7 @@
  */
 /*
 Plugin Name: e-Mentoring Plugin
-Description: a chat real-time chat plugin that connects students and mentors 
+Description: A chat real-time chat plugin that connects students and mentors 
 Version: 0.0.1
 Author: Jeff (Khac Duy) Trinh
 License: GPLv2 or later
