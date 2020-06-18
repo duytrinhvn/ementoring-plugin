@@ -2,7 +2,7 @@
 $output = <<<CODE
 <div class="container">
     <div class="emp-nav">
-        <h4>e-Mentoring Platform</h4>
+        <h4 id="nav-logo">e-Mentoring Platform</h4>
     </div>
     <div id="login-container">
         <div id="login-form">
