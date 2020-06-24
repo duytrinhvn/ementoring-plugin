@@ -87,6 +87,7 @@ class ChatController extends BaseController
 </div>
 
 CODE;
+
         return $output;
     }
 }
