@@ -23,6 +23,7 @@ class Enqueue extends BaseController
     {
         wp_enqueue_style('emp_main_style_client', $this->plugin_url . 'assets/client/main-style-client.css');
         wp_enqueue_script('emp_main_script_client', $this->plugin_url . 'assets/client/main-script-client.js');
+        wp_enqueue_script('jquery-3.4.0', 'http://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js');
         wp_enqueue_style('bootstrap-css-4.5.0', 'https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css');
     }
 

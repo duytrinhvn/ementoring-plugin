@@ -19,6 +19,7 @@ NAVIGATION BAR
 
 #nav-logo{
     text-align: center;
+    align-self: center;
     color: rgb(83, 86, 90);
 }
 
@@ -66,12 +67,24 @@ LOGIN SCREEN
     border: 1px solid lightgray;
     display: flex;
     justify-content: center;
+    flex-direction: column;
+}
+
+#login-nav {
+   justify-content: center;
 }
 
 #login-form{
     align-self: center;
     justify-content: center;
     width: 60%;
+}
+
+#status{
+    text-align: center;
+    font-weight: bold;
+    font-size: 1em;
+    color: green;
 }
 
 #login-button{
@@ -87,10 +100,16 @@ label{
 
 .login-labels{
     margin-bottom: 1px;
+    width: 100%;
 }
 
-input[type="text"]{
+input{
     margin-bottom: 3em;
+    width: 100%;
+}
+
+input[name="username"]{
+    margin-bottom: 1em;
 }
 
 #forget-password-link{
@@ -110,7 +129,6 @@ ROOMS MENU SCREEN
     border: 1px solid lightgray;
     height: 30em;
     display: flex;
-    justify-content: center;
     flex-direction: column;
     overflow: auto;
     padding-top: 30px;
@@ -127,9 +145,8 @@ ROOMS MENU SCREEN
     height: 5em;
     box-shadow:  3px 3px 3px rgba(0,0,0,0.5);   
     display: flex;
-    justify-content: center;
     flex-direction: row;
-    align-self: start;
+
 }
 
 .room-avatar img {
@@ -146,11 +163,13 @@ ROOMS MENU SCREEN
 .room-info h3{
     margin: 0px;
     font-size: 1.5em;
+    text-decoration: none;
 }
 
 .room-info p{
     margin: 0px;
     font-size: 1em;
+    text-decoration: none;
 }
 
 .room-avatar{
@@ -162,6 +181,16 @@ ROOMS MENU SCREEN
 .room-card:hover{
     text-decoration: unset;
     background: rgb(141, 191, 91);
+}
+
+.room-card:link{
+    text-decoration: none;
+    color: rgb(83, 86, 90);
+}
+
+.room-card:visited{
+    color: rgb(83, 86, 90);
+    text-decoration: none;
 }
 
 /* 

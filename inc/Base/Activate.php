@@ -63,11 +63,16 @@ class Activate
         add_user_meta($mentor1_id, 'company', 'Columbia college', true);
 
         self::insert_user('emp_student1', 'emp_student1@example.com', 'student1Pass', 'EMP Student #1', 'emp_student');
+        self::insert_user('emp_student2', 'emp_student2@example.com', 'student2Pass', 'EMP Student #2', 'emp_student');
         // get user id by username
         $student1_id = get_user_by('login', 'emp_student1')->ID;
+        $student2_id = get_user_by('login', 'emp_student2')->ID;
         // add metadatas
         add_user_meta($student1_id, 'interests', ['math', 'spanish', 'programming'], true);
         add_user_meta($student1_id, 'school', 'Holululu highschool', true);
+
+        add_user_meta($student2_id, 'interests', ['geography', 'technology', 'history'], true);
+        add_user_meta($student2_id, 'school', 'Tokyo highschool', true);
     }
 
     public static function create_capabilities()
@@ -117,6 +122,7 @@ class Activate
         global $wpdb;
         $charset_collate = $wpdb->get_charset_collate();
 
+        // TODO: Replace these local variables with constants from Base Controller
         $nameTopicsTable = $wpdb->base_prefix . 'emp_topics';
         $nameRoomsTable = $wpdb->base_prefix . 'emp_rooms';
         $nameRoomTopicTable = $wpdb->base_prefix . 'emp_roomtopic';

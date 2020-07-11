@@ -16,7 +16,7 @@ final class Init
     {
         return [
             Base\Enqueue::class,
-            Base\ChatController::class,
+            Base\AuthController::class,
         ];
     }
 
