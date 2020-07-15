@@ -147,6 +147,7 @@ class Activate
             id int NOT NULL, 
             room_id int NOT NULL,
             topic_id int NOT NULL,
+            completion tinyint(1) NOT NULL DEFAULT '0', 
             FOREIGN KEY (room_id) REFERENCES {$nameRoomsTable}(id),
             FOREIGN KEY (topic_id) REFERENCES {$nameTopicsTable}(id),
             PRIMARY KEY (id) 

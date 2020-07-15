@@ -13,6 +13,8 @@ use Inc\Base\BaseController;
  */
 class AuthController extends BaseController
 {
+    public $screen;
+
     public function register()
     {
         // Add enqueue hook
@@ -22,6 +24,10 @@ class AuthController extends BaseController
         add_shortcode('chat', array($this, 'emp_shortcode'));
         // Add ajax handler hook
         add_action('wp_ajax_nopriv_emp_login_process', array($this, 'login'));
+
+        add_action('wp_ajax_emp_chat_goto', array($this, 'goto_chat'));
+
+        add_action('wp_ajax_emp_topic_completion', array($this, 'change_topic_completion'));
     }
 
     public function emp_shortcode()
@@ -80,6 +86,40 @@ class AuthController extends BaseController
                 'message' => 'Login successful, redirecting...'
             )
         );
+
+        die();
+    }
+
+    public function goto_chat()
+    {
+
+        ob_start();
+        echo '<script type="text/javascript" src="' . $this->plugin_url . 'assets/client/conversation-script.js' . '"></script>';
+        require_once($this->plugin_path . 'templates/main-conversation.php');
+        echo ob_get_clean();
+        die();
+    }
+
+    public function change_topic_completion()
+    {
+        global $wpdb;
+        $checked = $_POST['checked'];
+        $checked = $checked == 1 ? 1 : 0;
+        $roomTopicId = $_POST['roomTopicId'];
+
+        $topicCompletionResults = $wpdb->get_results(
+            $wpdb->prepare(
+                "
+                UPDATE wp_emp_roomtopic
+                SET COMPLETION = %d
+                WHERE id = %d;
+                ",
+                $checked,
+                $roomTopicId
+            )
+        );
+
+        // TODO: Error handler for topicCompletionResults
 
         die();
     }

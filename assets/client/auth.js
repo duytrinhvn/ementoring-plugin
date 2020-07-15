@@ -57,4 +57,23 @@ $(document).ready(function () {
 
     submitButton.prop("disabled", false);
   }
+
+  // Click listener of room cards on Rooms Menu screen
+  $("div.room-card").on("click", function (e) {
+    e.preventDefault();
+    const idAttr = this.id;
+    const roomId = idAttr.substr(10);
+
+    // Extract values from the form
+    let data = {
+      action: "emp_chat_goto",
+      roomId: roomId,
+      nonce: nonceField.val(),
+    };
+
+    // Make AJAX request
+    jQuery.get(emp_params.ajaxurl, data, (resp) => {
+      $(".container").replaceWith(resp);
+    });
+  });
 });

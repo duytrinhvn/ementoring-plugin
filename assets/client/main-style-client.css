@@ -274,8 +274,8 @@ Conversation pages
     justify-content: center;
 }
 
-.rooms a{
-    text-decoration: none;
+.rooms:hover{
+    background: rgb(141, 191, 91);
 }
 
 .rooms img{

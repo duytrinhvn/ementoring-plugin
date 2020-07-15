@@ -19,7 +19,7 @@ $results = $wpdb->get_results(
             SELECT ROOM_ID 
             FROM {$this->nameParticipantsTable}
             WHERE USER_ID = %d
-        )
+        ) 
             AND USER_ID != %d
         ;
         ",
@@ -94,7 +94,7 @@ $results = $wpdb->get_results(
                 // $last_message = 
         ?>
 
-                <div href="#" class="room-card">
+                <div href="#" class="room-card" id="room-card-<?php echo $room->room_id; ?>">
                     <div class="room-info">
                         <h3>Student: <?php echo $opposite_user->display_name; ?></h3>
                         <p><?php echo $room->from_user_id == $current_user_id ? 'You' : $room->display_name; ?>: <?php echo $room->message; ?></p>
